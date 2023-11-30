@@ -334,6 +334,11 @@ def create_abs_rep(groups, con_groups, nabs, extend=1):
     for l in range(nabs):
         abs_con_groups[l] = list(dict.fromkeys(abs_con_groups[l]))
 
+    abslengths = []
+    for i in range(len(abs_con_groups)):
+        abslengths.append(len(abs_con_groups[i]))
+    print("Average no. of rec groups connected to abs group: " + str(np.mean(abslengths)))
+  
     abs_groups = np.zeros((nabs, neurons, neurons))
 
     for o in range(nabs):
